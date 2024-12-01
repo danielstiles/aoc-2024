@@ -4,6 +4,8 @@ import (
 	"bufio"
 	"log/slog"
 	"os"
+
+	"github.com/danielstiles/aoc-2024/01/internal/list"
 )
 
 func main() {
@@ -18,5 +20,5 @@ func main() {
 	for fileScanner.Scan() {
 		lines = append(lines, fileScanner.Text())
 	}
-	slog.Info("Answer")
+	slog.Info("Answer", slog.Int("total", list.Process(lines)))
 }
