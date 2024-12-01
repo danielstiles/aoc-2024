@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-func Process(lines []string) (total int) {
+func Process1(lines []string) (total int) {
 	l1, l2 := getLists(lines)
 	slices.Sort(l1)
 	slices.Sort(l2)
@@ -17,6 +17,22 @@ func Process(lines []string) (total int) {
 		} else {
 			total -= diff
 		}
+	}
+	return
+}
+
+func Process2(lines []string) (total int) {
+	l1, l2 := getLists(lines)
+	slices.Sort(l2)
+	for _, num := range l1 {
+		i := slices.Index(l2, num)
+		if i == -1 {
+			continue
+		}
+		count := 1
+		for ; i+count < len(l2) && l2[i+count] == num; count += 1 {
+		}
+		total += num * count
 	}
 	return
 }

@@ -20,5 +20,5 @@ func main() {
 	for fileScanner.Scan() {
 		lines = append(lines, fileScanner.Text())
 	}
-	slog.Info("Answer", slog.Int("total", list.Process(lines)))
+	slog.Info("Answer", slog.Int("total", list.Process1(lines)))
 }

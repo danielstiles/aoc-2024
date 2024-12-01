@@ -21,4 +21,6 @@
 go.work
 
 input*.txt
+example.txt
 cookie
+out*
