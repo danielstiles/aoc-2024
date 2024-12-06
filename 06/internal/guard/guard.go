@@ -11,6 +11,9 @@ func Process2(lines []string) (total int) {
 	path, _, _ := tracePath(grid, guardR, guardC, Up)
 	for i, row := range grid {
 		for j := range row {
+			if i == guardR && j == guardC {
+				continue
+			}
 			if path[i][j] > 2 {
 				grid[i][j] = Blocker
 				_, _, loop := tracePath(grid, guardR, guardC, Up)
